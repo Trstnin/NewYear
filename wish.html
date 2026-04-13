@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy New Year 💖</title>
-<style>
-  body {
+
+  <style>
+body {
   margin: 0;
   overflow: hidden;
   font-family: 'Segoe UI', cursive;
@@ -12,13 +13,10 @@
   background: #000;
 }
 
-/* VIDEO BACKGROUND */
+/* 🎥 VIDEO BACKGROUND */
 .video-bg {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -2;
   display: flex;
 }
@@ -27,34 +25,34 @@
   width: 50%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5) saturate(1.2);
+  filter: brightness(0.45) saturate(1.3);
 }
 
-/* MOBILE VIDEO FIX */
+/* 📱 MOBILE VIDEO FIX */
 @media (max-width: 768px) {
   .video-bg video {
     width: 100%;
   }
 }
 
-/* OVERLAY */
+/* 💖 OVERLAY */
 .overlay {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 105, 180, 0.25);
+  inset: 0;
+  background: rgba(255, 105, 180, 0.22);
   z-index: -1;
 }
 
-/* SCROLL AREA */
+/* 📜 SCROLL AREA */
 .scroll-container {
   height: 100vh;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  backdrop-filter: blur(8px);
+  scroll-behavior: smooth;
+  backdrop-filter: blur(10px);
 }
 
-/* SECTION */
+/* 💌 SECTIONS */
 .section {
   height: 100vh;
   display: flex;
@@ -66,27 +64,32 @@
   animation: fadeIn 1.5s ease forwards;
 }
 
-/* TEXT RESPONSIVE */
+/* 💖 TEXT */
 h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
-  text-shadow: 0 0 15px rgba(255, 192, 203, 0.9);
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  text-shadow: 0 0 18px rgba(255, 192, 203, 0.9);
 }
 
 p {
-  font-size: clamp(1rem, 3.5vw, 1.3rem);
-  max-width: 650px;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  max-width: 700px;
   line-height: 1.6;
 }
 
-/* IMAGE RESPONSIVE */
+/* 📸 IMAGE */
 img {
-  width: min(280px, 80vw);
-  border-radius: 20px;
+  width: min(300px, 85vw);
+  border-radius: 22px;
   margin: 10px;
-  box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.7);
+  transition: transform 0.3s ease;
 }
 
-/* ANIMATION */
+img:hover {
+  transform: scale(1.05);
+}
+
+/* ✨ FADE IN */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -95,6 +98,26 @@ img {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* 📱 EXTRA MOBILE BOOST */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  img {
+    width: min(360px, 92vw);
+  }
+
+  .section {
+    padding: 30px 15px;
   }
 }
 </style>
