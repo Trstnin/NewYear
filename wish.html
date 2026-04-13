@@ -103,19 +103,22 @@ img {
 
 @media (max-width: 768px) {
 
-  /* 📸 FORCE BIGGER IMAGES */
-  img {
+  /* 📸 IMAGES (force override) */
+  .section img {
     width: 92vw !important;
-    max-width: 420px;
+    max-width: 420px !important;
   }
 
-  /* 🔥 FORCE BIGGER TEXT */
-  h1 {
-    font-size: 3.4rem !important;
+  /* 🔥 HEADINGS */
+  .section h1 {
+    font-size: 3.6rem !important;
+    line-height: 1.2;
   }
 
-  p {
-    font-size: 1.5rem !important;
+  /* 💬 TEXT */
+  .section p {
+    font-size: 1.6rem !important;
+    max-width: 95%;
   }
 }
 </style>
