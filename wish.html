@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy New Year 💖</title>
+<style>
+  body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', cursive;
+  color: white;
+  background: #000;
+}
+
+/* VIDEO BACKGROUND */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: flex;
+}
+
+.video-bg video {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5) saturate(1.2);
+}
+
+/* MOBILE VIDEO FIX */
+@media (max-width: 768px) {
+  .video-bg video {
+    width: 100%;
+  }
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 105, 180, 0.25);
+  z-index: -1;
+}
+
+/* SCROLL AREA */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  backdrop-filter: blur(8px);
+}
+
+/* SECTION */
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* TEXT RESPONSIVE */
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  text-shadow: 0 0 15px rgba(255, 192, 203, 0.9);
+}
+
+p {
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* IMAGE RESPONSIVE */
+img {
+  width: min(280px, 80vw);
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎥 BACKGROUND VIDEOS -->
+<div class="video-bg">
+  <video src="./WhatsApp Video 2026-04-13 at 11.12.08 PM (1).mp4" autoplay muted loop></video>
+  <video src="./WhatsApp Video 2026-04-13 at 11.12.08 PM.mp4" autoplay muted loop></video>
+</div>
+
+<div class="overlay"></div>
+
+<!-- 🎵 MUSIC -->
+<audio id="music" autoplay loop>
+  <source src="./mac demarco  my kind of woman (LYRICS).mp3" type="audio/mpeg" >
+</audio>
+
+<!-- 💖 CONTENT -->
+<div class="scroll-container" id="scroll">
+
+  <div class="section">
+    <h1>💖 Happy New Year, Dalliiiiiii 💖</h1>
+    <p>
+      This new year just feels softer knowing you’re in my life…  
+      Being with you honestly feels like coming home — a warm place where I don’t have to pretend anything and my heart can finally relax 💖
+    </p>
+  </div>
+
+  <div class="section">
+    <img src="./WhatsApp Image 2026-04-13 at 11.12.08 PM.jpeg">
+    <p>
+      All those late-night game sessions, random laughs…  
+      they’ve slowly built something really real between us ✨
+    </p>
+  </div>
+
+  <div class="section">
+    <img src="./WhatsApp Image 2026-04-13 at 11.12.09 PM (1).jpeg">
+    <p>
+      I just hope this year we grow even stronger together — ajhai dherai strong hos 💕
+    </p>
+  </div>
+
+  <div class="section">
+    <img src="./WhatsApp Image 2026-04-13 at 11.12.09 PM (2).jpeg">
+    <p>
+      Ali ris chai kam gara guuuuuu 😭  
+      So we can enjoy each other more and love more openly 💖
+    </p>
+  </div>
+
+  <div class="section">
+    <img src="./WhatsApp Image 2026-04-13 at 11.12.09 PM.jpeg">
+    <p>
+      I’m really grateful for you, penguinnnnnnn 🐧💖  
+      More than I say sometimes…
+    </p>
+  </div>
+
+  <div class="section">
+    <h1>🌕✨</h1>
+    <p>
+      Dalli… isn’t the moon beautiful?
+    </p>
+  </div>
+
+  <div class="section">
+  <h1 style="font-size: 4rem; text-shadow: 0 0 20px pink;">
+    🎉✨ HAPPY NEW YEAR ✨🎉
+  </h1>
+
+  <p style="font-size: 1.6rem;">
+    💖 To my Dalli… my penguin… my everything 💖  
+    This year is ours. Let’s make it beautiful, loud, chaotic, soft, and unforgettable 🎊
+  </p>
+
+  <p style="font-size: 2rem;">
+    🎆 🎉 💃 🕺 🎇 💖 🎊 ✨
+  </p>
+
+  <p>
+    No matter what happens… I’m glad it’s you with me 🌕❤️
+  </p>
+</div>
+
+</div>
+
+<script>
+window.addEventListener("click", () => {
+  document.getElementById("music").play();
+}, { once: true });
+
+let scrollContainer = document.getElementById("scroll");
+let speed = 0.5;
+
+function autoScroll() {
+  let maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+
+  if (scrollContainer.scrollTop < maxScroll) {
+    scrollContainer.scrollTop += speed;
+    requestAnimationFrame(autoScroll);
+  } else {
+    // 🛑 STOP at final section
+    scrollContainer.scrollTop = maxScroll;
+
+    // optional: freeze fully
+    return;
+  }
+}
+
+autoScroll();
+</script>
+
+</body>
+</html>
